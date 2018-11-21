@@ -31,8 +31,9 @@
                 {% for fichier in candidat.fichiers %}
                     <tr>
                         <td>    </td>
-                        <td> {{fichier.id}}</td>
+                        <td><a href="{{fichier["id"]}}"> {{fichier.id}} </a></td>
                         <td> {{fichier.nom}}</td>
+                        <td> <a href="/fichiers/{{fichier["id"]}}" download> Telecharger </a> </td>
                     </tr>
                 {% endfor %}
             </tr>

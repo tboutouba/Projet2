@@ -1,0 +1,35 @@
+{%extends "layout.html"%}
+{% block body %}
+    <h1>Informations sur le fichier {{fichier["id"]}}</h1>
+        <table>
+            <tr>
+                <td>id </td>
+                <td> {{fichier["id"]}}</td>
+            </tr>
+            <tr>
+                <td>nom </td>
+                <td>{{fichier["nom"]}}</td>
+            </tr>
+            <tr>
+                <td>contenu </td>
+                <td> {{fichier.contenu}}</td>
+            </tr>
+            <tr>
+                <td>nomTest</td>
+                <td> {{fichier.nomTest}}</td>
+            </tr>
+            <tr>
+                <td>contenu_Test </td>
+                <td> {{fichier.contenu_Test}}</td>
+            </tr>
+                <td>compteRendu </td>
+                <td> {{fichier.compteRendu}}</td>
+            <tr>
+                <td>dateUpload </td>
+                <td> {{fichier.dateUpload}}</td>
+            </tr>
+            <tr>
+                <td> <a href="/fichiers/{{fichier["id"]}}" download> Telecharger </a> </td>
+            </tr>
+        </table>
+{% endblock %}
