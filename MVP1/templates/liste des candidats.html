@@ -1,0 +1,9 @@
+{%extends "layout.html"%}
+{% block body %}
+    <h1>Liste des candidats</h1>
+    <ul class="'list-group">
+       {% for candidat in data.candidats  %}
+            <li class="list-group.item"><a href="candidat/{{candidat.id}}">{{candidat.id}}  -  {{candidat.nom}} {{candidat.prenom}}</a></li>
+       {% endfor %}
+    </ul>
+{% endblock %}

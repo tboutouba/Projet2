@@ -1,7 +1,6 @@
-'''On considere que les informations sur les candidats sont stockees sous un format json de la forme de data'''
+'''On considere que les informations sur les candidats sont stockees sous un format json de la forme de'''
 
-data={
- "candidats":
+data_test={"candidats":
  [
  {
    "id": 1,
@@ -83,12 +82,13 @@ data={
 }
 
 
-def liste_candidats(data):
-    Liste_candidats=[]
-    for candidat in data['candidats']:
-        informations=[candidat["id"],candidat["nom"],candidat["prenom"]]
-        Liste_candidats.append(informations)
-    return Liste_candidats
+def liste_candidats(fichier):
+    with open(fichier) as data:
+        Liste_candidats=[]
+        for candidat in data['candidats']:
+            informations=[candidat["id"],candidat["nom"],candidat["prenom"]]
+            Liste_candidats.append(informations)
+        return Liste_candidats
 
 
 
