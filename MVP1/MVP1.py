@@ -1,7 +1,6 @@
 '''On considere que les informations sur les candidats sont stockees sous un format json de la forme de'''
 
-data_test={"candidats":
- [
+data_test=[
  {
    "id": 1,
    "nom": "nom1",
@@ -13,8 +12,30 @@ data_test={"candidats":
    "fichiers": 
    [
      {
-       "id" : 1,
-       "nom": 1,
+       "id" : 1.1,
+       "nom": 1.1,
+       "contenu": 1,
+       "nomTest": 1,
+       "contenu_Test": 1,
+       "stats": 
+       {
+         "functionsCount": 1,
+         "commentCount": 1,
+         "variableNameQuality": 1,
+         "duplicate": 
+         [
+           {
+             "id": 1,
+             "similarity": 1
+           }
+         ]
+       },
+       "compteRendu": 1,
+       "dateUpload": 1
+     },
+     {
+       "id" : 1.2,
+       "nom": 1.2,
        "contenu": 1,
        "nomTest": 1,
        "contenu_Test": 1,
@@ -79,7 +100,7 @@ data_test={"candidats":
    }
  }
  ]
-}
+
 
 
 def liste_candidats(fichier):

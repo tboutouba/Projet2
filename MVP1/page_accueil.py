@@ -13,7 +13,8 @@ def liste_des_candidats():
    
 @app.route('/candidat/<string:id>/')
 def candidat(id):
-    return render_template('candidat.html',id=id, data=data_test)
+    Candidat=data_test[int(id)-1]
+    return render_template('candidat.html',id = id,candidat=Candidat)
     
     
 
