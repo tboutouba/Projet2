@@ -1,0 +1,42 @@
+#Sur Pycharm: dans le fichier codingweek.py:
+
+#On créé un dictionnaire en guise d'exemple
+dictionnaire=dict()
+dico1=dict()
+dico2=dict()
+dico1["prenom"]="anas"
+dico1["nom"]="elbelbali"
+dico2["prenom"]="emmanuel"
+dico2["nom"]="macron"
+dictionnaire[1]=dico1
+dictionnaire[2]=dico2
+
+from flask import jsonify
+
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def afficher_liste_candidats():
+    return jsonify(dictionnaire)
+
+print(dictionnaire)
+
+#Dans l'invite de commande windows:
+
+pip install -e ../..
+pip install -e .
+
+cd PycharmProjects\Doctolib_Projet_2
+
+set FLASK_APP=codingweek.py
+set FLASK_ENV=development
+flask run
+
+# dans le navigateur:
+
+on ouvre:
+http://127.0.0.1:5000
+
+#La liste des deux candidats de l'exemple apparaît alors.
