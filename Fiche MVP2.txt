@@ -1,0 +1,19 @@
+MVP 2 
+
+Objectif : Pour chaque candidat afficher : Nom, prénom, date de l’entretien, son fichier de code et son fichier de test 
+
+Taches : 
+
+- Réalisation de la page d’accueil qui reprend le MVP 1 
+- Création d’une page par candidat regroupant les informations annoncées dans l’objectif (liens pour les différents documents etc) 
+- Création d’un lien qui renvoie chaque candidat a sa fiche  
+
+Ameliorations potentielles : 
+
+- Interface de connexion (login + mdp) : seuls les dev de doctolib auront accès à ses informations. 
+- Comparaison entre les candidats 
+
+
+Répartion : 
+A faire mercredi
+Chaque membre de l’équipe définira une tâche a réaliser. 
