@@ -1,9 +1,15 @@
-{%extends "layout.html"%}
+{%extends "layout_liste_candidats.html"%}
 {% block body %}
     <h1>Liste des candidats</h1>
-    <ul class="'list-group">
-       {% for candidat in data.candidats  %}
-            <li class="list-group.item"><a href="candidat/{{candidat.id}}">{{candidat.id}}  -  {{candidat.nom}} {{candidat.prenom}}</a></li>
+    <table>
+       {% for candidat in data %}
+            <tr>
+                <td> {{candidat.id}}   -  </td>
+                <td> {{candidat.nom}} </td>
+                <td> {{candidat.prenom}} </td>
+                <td> <input type="button" value="Accéder à la fiche du candidat" onclick="self.location.href='candidat/{{candidat.id}}'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick> </td>
+            </tr>
+    </table>
        {% endfor %}
-    </ul>
+
 {% endblock %}

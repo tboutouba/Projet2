@@ -1,5 +1,39 @@
-{% extends 'layout.html' %}
-
+{%extends "layout.html"%}
 {% block body %}
-    <h1>{{id}}</h1>
+    <h1>Fiche candidat</h1>
+        <table>
+            <tr>
+                <td> Nom  </td>
+                <td> {{candidat.nom}} </td>
+            </tr>
+            <tr>
+                <td> Prenom  </td>
+                <td> {{candidat.prenom}} </td>
+            </tr>
+            <tr>
+                <td> date de naissance  </td>
+                <td> {{candidat.dateNaissance}} </td>
+            </tr>
+            <tr>
+                <td> lieu de naissance  </td>
+                <td> {{candidat.lieuNaissance}}  </td>
+            </tr>
+            <tr>
+                <td> date de l'entretien  </td>
+                <td> {{candidat.dateEntretien}}</td>
+            </tr>
+            <tr>
+                <td> lieu de l'entretien  </td>
+                <td> {{candidat.lieuEntretien}} </td>
+            </tr>
+            <tr>
+                <td>fichier(s)  </td>
+                {% for fichier in candidat.fichiers %}
+                    <tr>
+                        <td>    </td>
+                        <td> {{fichier.id}}</td>
+                        <td> {{fichier.nom}}</td>
+                    </tr>
+                {% endfor %}
+            </tr>
 {% endblock %}
