@@ -24,19 +24,16 @@ def candidat(id):
         # check if the post request has the file part
         if 'file' not in request.files:
             flash('No file part')
-            print(1)
             return redirect(request.url)
         file = request.files['file']
         # if user does not select file, browser also
         # submit an empty part without filename
         if file.filename == '':
             flash('No selected file')
-            print(2)
             return redirect(request.url)
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            print(3)
             return redirect(request.url)
     Candidat=data_test[int(id)-1]
     return render_template('candidat.html',id = id,candidat=Candidat)
@@ -55,38 +52,20 @@ def fichier(id,fichier):
 def ouvrir_fichier(fichier):
     nom_fichier = fichier + ".pdf"
     return send_from_directory('/Users/mac/Desktop/centrale/1ereannee/CodingWeeks/ProjetDoctolib/MVP1/fichiers', nom_fichier)
+    
+@app.route('/candidat/<string:id>/<string:fichier>/stats')
+def stats(id,fichier):
+    Candidat=data_test[int(id)-1]
+    Fichier={}
+    for element in Candidat["fichiers"]:
+        if str(element["id"])==fichier:
+            Fichier=element
+            break
+    return render_template('stats.html',fichier=Fichier, id= id,candidat=Candidat)
 
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
-'''@app.route('/', methods=['GET', 'POST'])
-def upload_file():
-    if request.method == 'POST':
-        # check if the post request has the file part
-        if 'file' not in request.files:
-            flash('No file part')
-            return redirect(request.url)
-        file = request.files['file']
-        # if user does not select file, browser also
-        # submit an empty part without filename
-        if file.filename == '':
-            flash('No selected file')
-            return redirect(request.url)
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return redirect(url_for('uploaded_file',
-                                    filename=filename))
-    return 
-    <!doctype html>
-    <title>Upload new File</title>
-    <h1>Upload new File</h1>
-    <form method=post enctype=multipart/form-data>
-      <input type=file name=file>
-      <input type=submit value=Upload>
-    </form>
-    '''
 
 
 if __name__=='__main__':
