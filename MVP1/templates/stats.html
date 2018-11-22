@@ -1,0 +1,23 @@
+{%extends "layout.html"%}
+{% block body %}
+    <h1 style="color:Tomato;">Statistiques sur le fichier {{fichier["id"]}}</h1>
+        <table>
+            <tr>
+                <td>functionsCount : {{fichier.stats.functionsCount}}</td>
+            </tr>
+            <tr>
+                <td> commentCount : {{fichier.stats.commentCount}}</td>
+                <tr>
+             <tr>
+                <td> variableNameQuality : {{fichier.stats.variableNameQuality}}</td>
+                </tr>
+            <tr>
+                <td> duplicate :
+                    {%for elements in fichier.stats.duplicate%}
+                    <li> <a href="/fichiers/{{elements.id}}" download> id :{{elements.id}} </a></li>
+                <li> similarity : {{elements.similarity}}</li>
+                    {% endfor %}
+                </td>
+            </tr>
+        </table>
+{% endblock %}
