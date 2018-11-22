@@ -72,8 +72,8 @@ data_test=[
    "fichiers": 
    [
      {
-       "id" : 2,
-       "nom": 2,
+       "id" : 2.1,
+       "nom": 2.1,
        "contenu": 2,
        "nomTest": 2,
        "contenu_Test": 2,

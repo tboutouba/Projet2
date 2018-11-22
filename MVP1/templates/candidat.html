@@ -37,4 +37,11 @@
                     </tr>
                 {% endfor %}
             </tr>
+        </table>
+        <form method="POST" enctype="multipart/form-data">
+            <!-- On limite le fichier à 100Ko -->
+            <input type="hidden" name="MAX_FILE_SIZE" value="100000">
+            Fichier : <input type="file" name="file">
+            <input type="submit" name="envoyer" value="Envoyer le fichier">
+        </form>
 {% endblock %}
